@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  web:
+    build: ./web
+    container_name: agent_reservation_web
+    env_file: ./web/.env
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    volumes:
+      - ./web/app:/app
